@@ -25,7 +25,7 @@ class HelperServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $rdi = new RecursiveDirectoryIterator(app_path('Helpers' . DIRECTORY_SEPARATOR . 'Global'));
+        $rdi = new RecursiveDirectoryIterator(app_path('Helpers'));
         $it = new RecursiveIteratorIterator($rdi);
 
         while ($it->valid()) {
@@ -34,7 +34,7 @@ class HelperServiceProvider extends ServiceProvider
                 $it->isFile() &&
                 $it->isReadable() &&
                 $it->current()->getExtension() === 'php' &&
-                strpos($it->current()->getFilename(), 'Helper')
+                strpos($it->current()->getFilename(), 'Helper.php')
             ) {
                 require $it->key();
             }
