@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
-class MakeControllerDomainTest extends TestCase
+class DomainMakeControllerTest extends TestCase
 {
     public function test_make_controller_successfully()
     {

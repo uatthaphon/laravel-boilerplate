@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class MakeRequestDomain extends Command
+class DomainMakeRequest extends Command
 {
     /**
      * The name and signature of the console command.

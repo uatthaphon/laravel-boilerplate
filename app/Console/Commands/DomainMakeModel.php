@@ -6,7 +6,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Log;
 use Symfony\Component\Console\Input\InputOption;
 
-class MakeModelDomain extends Command
+class DomainMakeModel extends Command
 {
     /**
      * The name and signature of the console command.

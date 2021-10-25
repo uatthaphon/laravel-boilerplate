@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use Tests\TestCase;
 
-class MakeModelDomainTest extends TestCase
+class DomainMakeModelTest extends TestCase
 {
     public function test_make_model_domain_successfully()
     {
