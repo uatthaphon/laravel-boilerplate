@@ -17,9 +17,7 @@ class MakeModelDomainTest extends TestCase
         $this->clearDirectory($testDirectory);
 
         $command = $this->artisan("domain:model {$domain} {$model}");
-
         $command->execute();
-
         $command->expectsOutput(Command::SUCCESS);
 
         $this->assertFileExists($expected);
@@ -54,9 +52,7 @@ CLASS;
         $this->clearDirectory($testDirectory);
 
         $command = $this->artisan("domain:model {$domain} {$model} --pivot");
-
         $command->execute();
-
         $command->expectsOutput(Command::SUCCESS);
 
         $this->assertFileExists($expected);
