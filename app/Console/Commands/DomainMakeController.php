@@ -63,9 +63,11 @@ class DomainMakeController extends Command
 
             $this->call('make:controller', $arguments);
 
+            $this->line("<info>Created Domain Controller:</info> {$name}");
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
-            Log::Error($e->getMessage());
+            $this->error($e->getMessage());
 
             return Command::FAILURE;
         }

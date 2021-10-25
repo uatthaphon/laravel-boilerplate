@@ -3,8 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Log;
-use Symfony\Component\Console\Input\InputOption;
 
 class DomainMakeModel extends Command
 {
@@ -54,18 +52,13 @@ class DomainMakeModel extends Command
 
             $this->call('make:model', $arguments);
 
+            $this->line("<info>Created Domain Model:</info> {$name}");
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
-            Log::Error($e->getMessage());
+            $this->error($e->getMessage());
 
             return Command::FAILURE;
         }
-    }
-
-    protected function getOptions()
-    {
-        return [
-            ['pivot', 'p', InputOption::VALUE_NONE, 'Indicates if the generated model should be a custom intermediate table model'],
-        ];
     }
 }

@@ -49,9 +49,11 @@ class DomainMakeRequest extends Command
 
             $this->call('make:request', $arguments);
 
+            $this->line("<info>Created Domain Request:</info> {$name}");
+
             return Command::SUCCESS;
         } catch (\Exception $e) {
-            Log::Error($e->getMessage());
+            $this->error($e->getMessage());
 
             return Command::FAILURE;
         }
