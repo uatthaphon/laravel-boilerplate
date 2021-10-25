@@ -50,9 +50,7 @@ class MakeModelDomain extends Command
         try {
             $arguments = ['name' => $name];
 
-            if ($this->option('pivot')) {
-                $arguments['--pivot'] = true;
-            }
+            $arguments['--pivot'] = $this->option('pivot');
 
             $this->call('make:model', $arguments);
 
